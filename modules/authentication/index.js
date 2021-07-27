@@ -20,7 +20,6 @@ router.post('/login', (req, res) => {
   : setTimeout(() => { res.json(login) }, 1000)
 })
 
-
 /*
 
 POST /login
@@ -35,8 +34,6 @@ output:
   id: 0,
   name: ''
 }
-
-POST /logout
 
 GET /users/:id
 output:

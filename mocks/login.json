@@ -3,5 +3,6 @@
   "firstName": "Rafaela",
   "lastName": "Queiroz",
   "username": "rafaela",
-  "enabled": false
+  "enabled": false,
+  "token": "xpto"
 }

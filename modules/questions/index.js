@@ -12,7 +12,7 @@ router.get('/questions', (req,res) => setTimeout(() => {
 }, 1000))
 
 router.post('/question', (req, res) => {
-  return !req.body.username
+  return req.headers.token === "xpto"
   ? setTimeout(() => {
     res.status(422).send([
       {
