@@ -1,8 +1,18 @@
-{
-  "email": "rafaela.geraldo@dextra-sw.com",
-  "firstName": "Rafaela",
-  "lastName": "Queiroz",
-  "username": "rafaela",
-  "enabled": false,
-  "token": "xpto"
-}
+[
+  {
+    "email": "rafaela.geraldo@dextra-sw.com",
+    "firstName": "Rafaela",
+    "lastName": "Queiroz",
+    "username": "rafaela",
+    "enabled": false,
+    "token": "xpto"
+  },
+  {
+    "email": "danilo.contini@dextra-sw.com",
+    "firstName": "Danilo",
+    "lastName": "Contini",
+    "username": "danilo",
+    "enabled": false,
+    "token": "otpx"
+  }
+]
