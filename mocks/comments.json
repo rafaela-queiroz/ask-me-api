@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "questionId": 1,
+    "userId": 1,
+    "body": "Comentário de teste 123"
+  },
+  {
+    "id": 2,
+    "questionId": 1,
+    "userId": 4,
+    "body": "Testando comentário aaaaaaaaa"
+  },
+  {
+    "id": 3,
+    "questionId": 2,
+    "userId": 1,
+    "body": "Comentário de teste 123"
+  }
+]
