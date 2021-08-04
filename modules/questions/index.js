@@ -1,4 +1,5 @@
 const express = require("express");
+const fs = require("fs");
 const router = express.Router();
 
 let { questions } = require("../../mocks");
@@ -12,22 +13,6 @@ router.get("/questions", (req, res) => {
   return setTimeout(() => {
     res.send(questions);
   }, 1000);
-});
-
-router.post("/question", (req, res) => {
-  return req.headers.token === "xpto"
-    ? setTimeout(() => {
-        res.status(422).send([
-          {
-            field: "username",
-            index: 0,
-            message: "Preencha o nome de usuário",
-          },
-        ]);
-      }, 2000)
-    : setTimeout(() => {
-        res.json(questions);
-      }, 1000);
 });
 
 router.get("/questions/:id", (req, res) => {
@@ -68,22 +53,56 @@ router.get("/questions/:id/comments", (req, res) => {
       });
 });
 
-/*
+router.post("/question", (req, res) => {
+  return !req.body.userId || !req.body.title || !req.body.body
+    ? setTimeout(() => {
+        res.status(422).send([
+          {
+            field: "erro",
+            index: 0,
+            message: "Preencha os campos obrigatórios",
+          },
+        ]);
+      }, 2000)
+    : setTimeout(() => {
+        res.status(201).json({
+          field: "success",
+          index: 0,
+          message: "Questão cadastrada com sucesso",
+        });
+      }, 1000);
+});
 
-PUT  /questions/:id
-input:
-{
-  : '',
-}
+router.put("/questions/:id", (req, res) => {
+  return !req.body.userId || !req.body.body || !req.body.title
+    ? setTimeout(() => {
+        res.status(422).send([
+          {
+            field: "erro",
+            index: 0,
+            message: "Preencha os campos obrigatórios",
+          },
+        ]);
+      }, 2000)
+    : setTimeout(() => {
+        res.json(req.body);
+      }, 1000);
+});
 
-
-POST /questions/:id/comments
-input:
-{
-  body: '',
-  userId: 0
-}
-
-*/
+router.post("/questions/:id/comment", (req, res) => {
+  return !req.body.userId || !req.body.body
+    ? setTimeout(() => {
+        res.status(422).send([
+          {
+            field: "erro",
+            index: 0,
+            message: "Preencha os campos obrigatórios",
+          },
+        ]);
+      }, 2000)
+    : setTimeout(() => {
+        res.json(req.body);
+      }, 1000);
+});
 
 module.exports = router;
