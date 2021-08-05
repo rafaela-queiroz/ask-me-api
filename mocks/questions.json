@@ -10,5 +10,29 @@
     "userId": 3,
     "title": "Comentário de teste",
     "body": "um dois tres"
+  },
+  {
+    "id": 3,
+    "userId": 1,
+    "title": "Outraaaaa",
+    "body": "Teste FS Node"
+  },
+  {
+    "id": 4,
+    "userId": 1,
+    "title": "Editando meu post",
+    "body": "Editando meu post com fs node"
+  },
+  {
+    "id": 5,
+    "userId": 1,
+    "title": "Mais ummmm",
+    "body": "Teste FS Node"
+  },
+  {
+    "id": 6,
+    "userId": 1,
+    "title": "Editando meu post",
+    "body": "Editando meu post com fs node"
   }
 ]

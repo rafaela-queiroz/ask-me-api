@@ -1,9 +1,11 @@
 const express = require("express");
-const fs = require("fs");
 const router = express.Router();
+const { saveMock } = require("../../utils/saveMock");
 
 let { questions } = require("../../mocks");
 let { comments } = require("../../mocks");
+
+const FILENAME = "questions.json";
 
 router.get("/question", (req, res) => {
   res.json({ message: "hello from questions" });
@@ -65,6 +67,12 @@ router.post("/question", (req, res) => {
         ]);
       }, 2000)
     : setTimeout(() => {
+        saveMock({
+          fileName: FILENAME,
+          newData: req.body,
+          action: "create",
+        });
+
         res.status(201).json({
           field: "success",
           index: 0,
@@ -85,6 +93,12 @@ router.put("/questions/:id", (req, res) => {
         ]);
       }, 2000)
     : setTimeout(() => {
+        saveMock({
+          fileName: FILENAME,
+          newData: { id: Number(req.params.id), ...req.body },
+          action: "update",
+        });
+
         res.json(req.body);
       }, 1000);
 });
